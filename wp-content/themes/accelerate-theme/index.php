@@ -56,3 +56,4 @@ get_header(); ?>
 	</section>
 	<!-- END blog page -->
 <?php get_footer();
+<pre><?php print_r($wp_query); exit; ?></pre>

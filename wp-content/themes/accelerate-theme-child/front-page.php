@@ -13,7 +13,6 @@
  */
 
 get_header(); ?>
-<pre><?php print_r($wp_query); exit; ?></pre>
 <section class="home-page">
 	<div class="site-content">
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -24,5 +23,20 @@ get_header(); ?>
 		<?php endwhile; // end of the loop. ?>
 	</div><!-- .container -->
 </section><!-- .home-page -->
+<section class="recent-posts">
+	<div class="site-content">
+		<div class="blog-post">
+ 			<h4>From the Blog</h4>
+ 			<?php query_posts('posts_per_page=1'); ?>
+ 			<?php while ( have_posts() ) : the_post(); ?>
+ 				<h2><?php the_title(); ?></h2>
+				<?php the_excerpt(); ?>
+				<a href="<?php the_permalink(); ?>" class="read-more-link">Read More <span>&rsaquo;</span></a>
+			<?php endwhile; // end of the loop. ?>
+			<?php wp_reset_query(); // resets the altered query back to the original ?>
+		</div>
+ 
+	</div>
+</section>
 
 <?php get_footer(); ?>
