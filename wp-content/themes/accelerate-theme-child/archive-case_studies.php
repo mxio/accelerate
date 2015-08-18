@@ -18,7 +18,7 @@ get_header(); ?>
 		<div id="content" role="main">
 			<?php while ( have_posts() ) : the_post(); 
 				$image_1 = get_field('image_1');
-				$size = "medium"; ?>
+				$size = "medium";
 				$services = get_field('services');
 			?>
 
