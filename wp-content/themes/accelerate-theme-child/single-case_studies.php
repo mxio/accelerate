@@ -28,7 +28,7 @@ get_header(); ?>
 					<aside class="text">
 					<h2><?php the_title(); ?></h2>
 					<h5><?php echo $services; ?> </h5>
-					<h6>Client: <?php $client; ?></h6>h6
+					<h6>Client: <?php $client; ?></h6>
 				
 				<?php the_content(); ?>
 
@@ -37,9 +37,17 @@ get_header(); ?>
 			</aside>
 
 	<div class="images">
+	<?php if($image_1) { ?>
 	<img src="<?php echo $image_1; ?>" />
+	<?php } ?>
+
+	<?php if($image_2) { ?>
 	<img src="<?php echo $image_2; ?>" />
+	<?php } ?>
+
+	<?php if($image_3) { ?>
 	<img src="<?php echo $image_3; ?>" />
+	<?php } ?>
 </div>
 
 				</article>
