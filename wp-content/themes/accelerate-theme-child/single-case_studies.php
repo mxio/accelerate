@@ -39,7 +39,7 @@ get_header(); ?>
 
 	<div class="images">
 	<?php if($image_1) { ?>
-	<img src="<?php echo $image_1; ?>" />
+	<?php echo wp_get_attachment_image($image_1, $size); ?>
 	<?php } ?>
 
 	<?php if($image_2) { ?>
