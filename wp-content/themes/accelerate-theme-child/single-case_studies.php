@@ -39,15 +39,15 @@ get_header(); ?>
 
 	<div class="images">
 	<?php if($image_1) { ?>
-	echo wp_get_attachment_image( $image_1, $size );
+	<img src="<?php echo wp_get_attachment_image( $image_1, $size ); ?>" />
 	<?php } ?>
 
 	<?php if($image_2) { ?>
-	echo wp_get_attachment_image( $image_2, $size );
+	<img src="<?php echo wp_get_attachment_image( $image_1, $size ); ?>" />
 	<?php } ?>
 
 	<?php if($image_3) { ?>
-	echo wp_get_attachment_image( $image_3, $size );
+	<img src="<?php echo wp_get_attachment_image( $image_1, $size ); ?>" />
 	<?php } ?>
 </div>
 
