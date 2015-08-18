@@ -16,37 +16,30 @@ get_header(); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main">
-			<?php while ( have_posts() ) : the_post(); 
-				$image_1 = get_field('image_1');
-				$size = "medium";
-				$services = get_field('services');
-			?>
+		<?php while ( have_posts() ) : the_post(); 
+			$image_1 = get_field('image_1');
+			$size = "medium";
+			$services = get_field('services'); ?>
 
-	<aside class="text">
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title; ?></a></h2>
-					<h5><?php echo $services; ?> </h5>
-				
-				<?php the_excerpt(); ?>
+	<article class="case-study">
+		<aside class="text">
+			<h2><a href="<?php the_permalink(); ?>"><?php the_title; ?></a></h2>
+			<h5><?php echo $services; ?> </h5>
+			<?php the_excerpt(); ?>
+			<p><a href="<?php the_permalink(); ?>">View Project</a></p>
+		</aside>	
+		<div class="images">
+			<a href="<?php the_permalink(); ?>">
+				<?php if($image_1) { 
+					echo wp_get_attachment_image( $image_1, $size );
+				} ?>
+			</a>
+		</div>
+	</article>
+<?php endwhile; // end of the loop. ?>
 
-				<p><a href="<?php the_permalink(); ?>">View Project</a></p>
-
-			</aside>
-
-	<div class="images">
-	<?php if($image_1) { ?>
-	<?php echo wp_get_attachment_image($image_1, $size); ?>
-	<?php } ?>
-
-</div>
-
-				</article>
-
-
-				<?php the_excerpt(); ?>
-			<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
+	</div><!-- #content -->
+</div><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
